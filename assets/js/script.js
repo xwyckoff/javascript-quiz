@@ -15,7 +15,6 @@ class Question {
         this.options = [opt1, opt2, opt3, correctAns];
         this.correctAns = correctAns;
     }
-
     //method to display the question text on the page
     setQuestionText() {
         questionText.text(this.question);
@@ -25,7 +24,14 @@ class Question {
     setAnswerOpts() {
         //first clear all the list items from the list of answers
         ansOptions.text("");
-        //create a list element for each answer option
+
+        //randomly shuffles the array of answer options around so they aren't always in the same order (explanation written for future reference)
+        //array.sort takes a function that will determine how the array is sorted if a positive or negative number is returned from the function
+        //if positive, it will place element a after element b, if negative it places element a before element b, and if equal to 0, it will keep them how they are
+        //this function will randomly return a negative or positive number, thus randomly moving the elements around in the array
+        this.options.sort((a, b) => 0.5 - Math.random());
+
+        //creates a list element for each answer option
         this.options.forEach(ans => {
             let answerEl = $('<li>');
             answerEl.text(ans);
@@ -56,6 +62,11 @@ function startQuiz() {
             clearInterval(timeout);
         }
     }, 1000)
+}
+
+//function to end the quiz, displays high score and gives option to save high score
+function endQuiz() {
+
 }
 
 //function to display the question and what to do when the user selects a question
