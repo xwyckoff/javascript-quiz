@@ -1,18 +1,25 @@
 body{
-    padding: 300px;
+    padding: 150px;
 }
 header {
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 28px;
+}
+
+#starterText {
+    font-size: 36px;
 }
 
 .btn {
     background-color: darkmagenta;
     color: white;
     padding: 10px;
+    margin: 10px;
     border: none;
     border-radius: 10px;
+    font-size: 36px;
 }
 
 .btn:hover {
@@ -20,6 +27,24 @@ header {
     cursor: pointer;
 }
 
-#questions li {
-    margin: 20px;
+#questions li{
+    list-style: none;
+}
+
+#questionText {
+    font-size: 72px;
+}
+
+#scoreList {
+    background-color: rgb(230, 153, 230);
+    font-size: 36px;
+}
+
+#nameInput {
+    padding: 10px;
+    font-size: 36px;
+}
+
+#viewHighScores:hover {
+    cursor: pointer;
 }

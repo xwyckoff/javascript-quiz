@@ -4,7 +4,7 @@ let ansOptions = $("#questions");
 let startButton = $("#startButton");
 let questionContainer = $("#questionContainer");
 let scoreList = $("#scoreList");
-let timeLeft = 20;
+let timeLeft = 60;
 let score = 0;
 let getHighScore = JSON.parse(localStorage.getItem('highScores') || "[]");
 let submitScore = $("<button></button>");
@@ -50,13 +50,17 @@ class Question {
     }
 }
 
-let test = new Question("test", "1", "2", "3", "4");
-let test2 = new Question("test2", "5", "6", "7", "8");
-quizList = [test, test2];
+let q1 = new Question("Arrays in JavaScript can be used to store ______", "Numbers", "Strings", "Objects", "All of the Above")
+let q2 = new Question("Commonly used data types DO NOT include:", "Strings", "Booleans", "Numbers", "Alerts");
+let q3 = new Question("The condition in an if/else statement is enclosed with ________.", "Quotes", "Curly Brackets", "Square Brackets", "Parenthesis");
+let q4 = new Question("A very useful tool used during developmetn and debugging for printing content to the debugger is:", "JavaScript", "Terminal/Bash", "For Loops", "console.log");
+let q5 = new Question("String values must be enclosed within ______ when being assigned variables.", "Commas", "Curly Brackets", "Parenthesis", "Quotes");
+quizList = [q1, q2, q3, q4];
 //function to run the quiz, takes the list of questions for the quiz
 
 function startQuiz() {
     //start the timer for the quiz, set the current question to the first question, and remove the starter text
+    startButton.remove();
     $('#starterText').empty();
     currentQuestion = 0;
     askQuestion(currentQuestion);
@@ -87,6 +91,7 @@ function endQuiz() {
     //create input text box
     submitName.attr("type","text");
     submitName.attr("id","nameInput");
+    submitName.attr("placeholder", "Enter Your Initials")
     questionContainer.append(submitName);
 
     //create submit score button
