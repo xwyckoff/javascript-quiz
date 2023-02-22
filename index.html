@@ -7,15 +7,18 @@
 
     <body>
         <header>
-          <p>View high scores</p>
+          <p onclick="location.href = 'highscores.html'">View high scores</p>
           <p id="timer">Time: 0</p>  
         </header>
         
         <main>
-            <h1 id="questionText">JavaScript Quiz</h1>
-            <p id="starterText">Try to answer the following code-related questions within the time limit. Keep in mind that the incorrect answers will penalize your score/time by ten seconds!</p>
-            <ol id="questions"></ol>
-            <button id="startButton">Start Quiz</button>
+            <section id="questionContainer">
+                <h1 id="questionText">JavaScript Quiz</h1>
+                <p id="starterText">Try to answer the following code-related questions within the time limit. Keep in mind that the incorrect answers will penalize your score/time by ten seconds!</p>
+                <ol id="questions"></ol>
+                <h2 id="correctText"></h2>
+                <button class="btn" id="startButton" onclick="startQuiz();">Start Quiz</button>
+            </section>
         </main>
         <script
         src="https://code.jquery.com/jquery-3.6.3.js"

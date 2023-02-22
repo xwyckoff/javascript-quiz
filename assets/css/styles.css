@@ -1,0 +1,25 @@
+body{
+    padding: 300px;
+}
+header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: darkmagenta;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: magenta;
+    cursor: pointer;
+}
+
+#questions li {
+    margin: 20px;
+}
